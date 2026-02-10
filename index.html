@@ -11,26 +11,41 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://brinkmannbank.nl/" />
 
-  <!-- Hreflang (keep it simple; add nl later if you publish a Dutch version) -->
+  <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://brinkmannbank.nl/" />
   <link rel="alternate" hreflang="x-default" href="https://brinkmannbank.nl/" />
+
+  <!-- ✅ Icons (place these files in your ROOT):
+       /apple-touch-icon.png  (180x180)
+       /favicon-32x32.png
+       /favicon-16x16.png
+       /favicon.ico
+       /site.webmanifest (optional but nice)
+  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- ✅ iOS “Open as webapp” behaviour -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Brinkmann Bank" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Brinkmann Bank — Banking & governance for founders (MVP)" />
   <meta property="og:description" content="Pre-launch MVP: banking + governance built for serious founders. Request early access." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://brinkmannbank.nl/" />
-  <!-- Optional: create a real og image later -->
+  <!-- Recommended: create later -->
   <!-- <meta property="og:image" content="https://brinkmannbank.nl/assets/og.jpg" /> -->
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Optional favicons -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
-  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
-
-  <!-- Optional: if hero.jpg is heavy, consider converting to webp later -->
+  <!-- Optional: preload hero image (if it helps LCP; keep if file exists) -->
   <!-- <link rel="preload" as="image" href="/assets/img/hero.jpg" fetchpriority="high" /> -->
 
   <!-- Structured data -->
@@ -59,11 +74,8 @@
   <style>
     :root{
       --bg: #0b1020;
-      --ink: #0e0f12;
-      --paper: #0f1426;
       --muted: rgba(255,255,255,.72);
       --muted2: rgba(255,255,255,.58);
-      --card: rgba(255,255,255,.06);
       --stroke: rgba(255,255,255,.12);
       --gold: #c9a24d;
       --gold2:#a8843a;
@@ -78,21 +90,23 @@
       margin:0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: rgba(255,255,255,.92);
-      background: radial-gradient(1200px 600px at 50% 0%, rgba(201,162,77,.12), transparent 55%),
-                  radial-gradient(900px 500px at 20% 20%, rgba(56,189,248,.10), transparent 55%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 600px at 50% 0%, rgba(201,162,77,.12), transparent 55%),
+        radial-gradient(900px 500px at 20% 20%, rgba(56,189,248,.10), transparent 55%),
+        var(--bg);
       line-height:1.6;
     }
 
     a{ color:inherit; }
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 
-    /* Top bar (subtle) */
+    /* Top bar */
     .top{
       position: fixed;
       top: 0; left: 0; right:0;
       z-index: 10;
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       background: rgba(8,10,16,.35);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
@@ -125,7 +139,7 @@
       display:flex;
       align-items:center;
       position: relative;
-      padding-top: 68px; /* for fixed top bar */
+      padding-top: 68px;
       overflow: hidden;
     }
     .hero::before{
@@ -134,7 +148,7 @@
       background:
         linear-gradient(180deg, rgba(11,16,32,.20), rgba(11,16,32,.82)),
         radial-gradient(800px 500px at 50% 30%, rgba(201,162,77,.18), transparent 60%),
-        url("assets/img/hero.jpg") center/cover no-repeat;
+        url("/assets/img/hero.jpg") center/cover no-repeat;
       filter: saturate(0.95) contrast(1.02);
       transform: scale(1.02);
     }
@@ -152,9 +166,8 @@
       transform: translateY(18px);
       animation: heroIn 1.1s ease forwards;
     }
-    @keyframes heroIn{
-      to{ opacity:1; transform:translateY(0); }
-    }
+    @keyframes heroIn{ to{ opacity:1; transform:translateY(0); } }
+
     .kicker{
       display:inline-flex;
       align-items:center;
@@ -169,6 +182,7 @@
       margin-bottom: 18px;
     }
     .kicker b{ color: rgba(255,255,255,.92); }
+
     h1{
       margin: 0 0 10px;
       font-size: clamp(38px, 5vw, 62px);
@@ -383,7 +397,6 @@
         <a href="#why">Why</a>
         <a href="#building">We’re building</a>
         <a href="#access">Early access</a>
-        <!-- SEO/internal links to real pages -->
         <a href="/diensten.html">Services</a>
         <a href="/contact.html">Contact</a>
       </nav>
@@ -486,7 +499,6 @@
           <a class="btn btn-primary" href="mailto:hello@brinkmannbank.nl?subject=Early%20access%20%E2%80%94%20Brinkmann%20Bank&body=Hi%2C%0A%0AI%E2%80%99d%20like%20early%20access.%0A%0AName%3A%0ACompany%3A%0AStage%3A%0AWhat%20do%20you%20want%20fixed%20in%20banking%20today%3F%0A%0AThanks!">Email hello@</a>
           <a class="btn btn-ghost" href="mailto:legal@brinkmannbank.nl?subject=Legal%20question%20%E2%80%94%20Brinkmann%20Bank">Legal: legal@</a>
           <a class="btn btn-ghost" href="mailto:info@brinkmannbank.nl?subject=General%20question%20%E2%80%94%20Brinkmann%20Bank">Info: info@</a>
-          <!-- SEO/internal link to real page -->
           <a class="btn btn-ghost" href="/contact.html">Contact page</a>
         </div>
       </div>
@@ -502,7 +514,6 @@
       <div>
         Pre-launch MVP • Built on Banking-as-a-Service<br/>
         <span style="color: rgba(255,255,255,.55);">Not a bank (yet). Not financial advice. Just honest progress.</span><br/>
-        <!-- SEO/internal links -->
         <span style="color: rgba(255,255,255,.55);">
           <a href="/over.html">About</a> · <a href="/diensten.html">Services</a> · <a href="/contact.html">Contact</a>
         </span>
