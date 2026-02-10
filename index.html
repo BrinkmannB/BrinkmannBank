@@ -3,8 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brinkmann Bank — Banking and governance for founders</title>
-  <meta name="description" content="Brinkmann Bank: business banking + governance, built for serious founders. Early access for the MVP." />
+
+  <title>Brinkmann Bank — Banking & governance for founders (MVP)</title>
+  <meta name="description" content="Brinkmann Bank: banking + governance built for serious founders. Pre-launch MVP. Request early access." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://brinkmannbank.nl/" />
+
+  <!-- Hreflang (keep it simple; add nl later if you publish a Dutch version) -->
+  <link rel="alternate" hreflang="en" href="https://brinkmannbank.nl/" />
+  <link rel="alternate" hreflang="x-default" href="https://brinkmannbank.nl/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Brinkmann Bank — Banking & governance for founders (MVP)" />
+  <meta property="og:description" content="Pre-launch MVP: banking + governance built for serious founders. Request early access." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brinkmannbank.nl/" />
+  <!-- Optional: create a real og image later -->
+  <!-- <meta property="og:image" content="https://brinkmannbank.nl/assets/og.jpg" /> -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Optional favicons -->
+  <!-- <link rel="icon" href="/favicon.ico" /> -->
+  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+  <!-- Optional: if hero.jpg is heavy, consider converting to webp later -->
+  <!-- <link rel="preload" as="image" href="/assets/img/hero.jpg" fetchpriority="high" /> -->
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Brinkmann Bank",
+    "url":"https://brinkmannbank.nl/",
+    "email":"hello@brinkmannbank.nl",
+    "address":{
+      "@type":"PostalAddress",
+      "addressCountry":"NL"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Brinkmann Bank",
+    "url":"https://brinkmannbank.nl/"
+  }
+  </script>
 
   <style>
     :root{
@@ -54,6 +104,7 @@
       display:flex; gap:10px; align-items:center;
       letter-spacing:.2px;
       font-weight: 700;
+      text-decoration: none;
     }
     .dot{
       width:10px; height:10px; border-radius:999px;
@@ -88,7 +139,6 @@
       transform: scale(1.02);
     }
     .hero::after{
-      /* subtle vignette */
       content:"";
       position:absolute; inset:-20px;
       background: radial-gradient(900px 520px at 50% 30%, transparent 25%, rgba(0,0,0,.35) 72%);
@@ -223,9 +273,9 @@
     }
     .card{
       grid-column: span 4;
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--r);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
       padding: 18px 18px 16px;
       position: relative;
       overflow:hidden;
@@ -237,7 +287,7 @@
       top:0; left:0; right:0;
       height: 3px;
       background: rgba(201,162,77,.85);
-      opacity: .45;   /* subtle gold accent */
+      opacity: .45;
     }
     .card:hover{
       transform: translateY(-4px);
@@ -256,7 +306,7 @@
       font-size: 14px;
     }
 
-    /* Big bullets (killer section) */
+    /* Big bullets */
     .bullets{
       display:grid;
       grid-template-columns: 1fr;
@@ -282,9 +332,7 @@
       color: rgba(255,255,255,.92);
       font-weight: 800;
     }
-    .bullet b{
-      color: rgba(255,255,255,.95);
-    }
+    .bullet b{ color: rgba(255,255,255,.95); }
     .bullet span{
       color: var(--muted);
       font-size: 14px;
@@ -309,9 +357,7 @@
     .foot strong{ color: rgba(255,255,255,.86); }
 
     /* Responsive */
-    @media (max-width: 920px){
-      .card{ grid-column: span 6; }
-    }
+    @media (max-width: 920px){ .card{ grid-column: span 6; } }
     @media (max-width: 640px){
       .nav{ display:none; }
       .hero{ min-height: 88vh; }
@@ -330,113 +376,122 @@
 <body>
   <div class="top">
     <div class="wrap">
-      <div class="brand"><span class="dot"></span> Brinkmann Bank</div>
-      <div class="nav">
+      <a class="brand" href="/" aria-label="Brinkmann Bank home">
+        <span class="dot" aria-hidden="true"></span> Brinkmann Bank
+      </a>
+      <nav class="nav" aria-label="On-page navigation">
         <a href="#why">Why</a>
         <a href="#building">We’re building</a>
         <a href="#access">Early access</a>
-      </div>
+        <!-- SEO/internal links to real pages -->
+        <a href="/diensten.html">Services</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
     </div>
   </div>
 
-  <header class="hero" id="top">
-    <div class="wrap hero-inner">
-      <div class="kicker"><b>MVP</b> — banking + governance, built for founders</div>
+  <main id="content">
+    <header class="hero" id="top">
+      <div class="wrap hero-inner">
+        <div class="kicker"><b>MVP</b> — banking + governance, built for founders</div>
 
-      <h1>Banking and governance<br/>for founders — from day one.</h1>
+        <h1>Banking and governance<br/>for founders — from day one.</h1>
 
-      <p class="sub">
-        Built for <strong>serious businesses</strong>, not side projects.
-        A calm, European-first experience that helps you move fast — without losing control.
-      </p>
+        <p class="sub">
+          Built for <strong>serious businesses</strong>, not side projects.
+          A calm, European-first experience that helps you move fast — without losing control.
+        </p>
 
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:hello@brinkmannbank.nl?subject=Early%20access%20request%20%E2%80%94%20Brinkmann%20Bank&body=Hi%20Brinkmann%20Bank%2C%0A%0AI%E2%80%99d%20like%20early%20access.%0A%0AName%3A%0ACompany%3A%0AStage%20(%2Ffreelance%2Fstartup%2FSME)%3A%0AWhat%20are%20you%20missing%20in%20banking%20today%3F%0A%0AThanks!">
-          Request early access
-        </a>
-        <a class="btn btn-ghost" href="#building">See what we’re building</a>
-      </div>
-
-      <div class="trust">
-        <span class="pill"><i></i> Pre-launch • invite-only</span>
-        <span class="pill">Built on Banking-as-a-Service (partnered)</span>
-        <span class="pill">EU-first posture</span>
-      </div>
-    </div>
-  </header>
-
-  <section id="why" class="panel">
-    <div class="wrap">
-      <h2>Why Brinkmann Bank exists</h2>
-      <p class="lead">
-        Founders lose time on banking, admin and compliance — exactly when focus matters most.
-        We’re building a bank-like experience that treats governance as a feature, not a penalty.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Less friction</h3>
-          <p>Open, operate, and stay on track — without the usual paperwork spiral.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:hello@brinkmannbank.nl?subject=Early%20access%20request%20%E2%80%94%20Brinkmann%20Bank&body=Hi%20Brinkmann%20Bank%2C%0A%0AI%E2%80%99d%20like%20early%20access.%0A%0AName%3A%0ACompany%3A%0AStage%20(%2Ffreelance%2Fstartup%2FSME)%3A%0AWhat%20are%20you%20missing%20in%20banking%20today%3F%0A%0AThanks!">
+            Request early access
+          </a>
+          <a class="btn btn-ghost" href="#building">See what we’re building</a>
         </div>
-        <div class="card">
-          <h3>More control</h3>
-          <p>Clear roles, auditability, and decision hygiene built into the workflow.</p>
-        </div>
-        <div class="card">
-          <h3>Founder clarity</h3>
-          <p>Guidance where it matters: cashflow, risk, and governance decisions.</p>
+
+        <div class="trust">
+          <span class="pill"><i aria-hidden="true"></i> Pre-launch • invite-only</span>
+          <span class="pill">Built on Banking-as-a-Service (partnered)</span>
+          <span class="pill">EU-first posture</span>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <section id="building">
-    <div class="wrap">
-      <h2>We’re building</h2>
-      <p class="lead">
-        The MVP is deliberately focused. Three things, done properly — so it actually feels trustworthy.
-      </p>
+    <section id="why" class="panel">
+      <div class="wrap">
+        <h2>Why Brinkmann Bank exists</h2>
+        <p class="lead">
+          Founders lose time on banking, admin and compliance — exactly when focus matters most.
+          We’re building a bank-like experience that treats governance as a feature, not a penalty.
+        </p>
 
-      <div class="bullets">
-        <div class="bullet">
-          <div class="badge">1</div>
-          <div>
-            <b>Business banking that doesn’t waste your week.</b>
-            <span>Accounts, payments and cashflow visibility — powered by a regulated BaaS partner.</span>
+        <div class="grid">
+          <div class="card">
+            <h3>Less friction</h3>
+            <p>Open, operate, and stay on track — without the usual paperwork spiral.</p>
           </div>
-        </div>
-        <div class="bullet">
-          <div class="badge">2</div>
-          <div>
-            <b>Governance by design (not a bolt-on checkbox).</b>
-            <span>Decision trails, role clarity, and compliance awareness from the start.</span>
+          <div class="card">
+            <h3>More control</h3>
+            <p>Clear roles, auditability, and decision hygiene built into the workflow.</p>
           </div>
-        </div>
-        <div class="bullet">
-          <div class="badge">3</div>
-          <div>
-            <b>A founder assistant that improves decisions — not vibes.</b>
-            <span>Practical prompts for cashflow, risk and operations. Less “AI magic”, more “useful”.</span>
+          <div class="card">
+            <h3>Founder clarity</h3>
+            <p>Guidance where it matters: cashflow, risk, and governance decisions.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="access" class="panel">
-    <div class="wrap">
-      <h2>Early access</h2>
-      <p class="lead">
-        If you’re building a serious business and want to help shape the MVP, email us. Short and human is fine.
-      </p>
+    <section id="building">
+      <div class="wrap">
+        <h2>We’re building</h2>
+        <p class="lead">
+          The MVP is deliberately focused. Three things, done properly — so it actually feels trustworthy.
+        </p>
 
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:hello@brinkmannbank.nl?subject=Early%20access%20%E2%80%94%20Brinkmann%20Bank&body=Hi%2C%0A%0AI%E2%80%99d%20like%20early%20access.%0A%0AName%3A%0ACompany%3A%0AStage%3A%0AWhat%20do%20you%20want%20fixed%20in%20banking%20today%3F%0A%0AThanks!">Email hello@</a>
-        <a class="btn btn-ghost" href="mailto:legal@brinkmannbank.nl?subject=Legal%20question%20%E2%80%94%20Brinkmann%20Bank">Legal: legal@</a>
-        <a class="btn btn-ghost" href="mailto:info@brinkmannbank.nl?subject=General%20question%20%E2%80%94%20Brinkmann%20Bank">Info: info@</a>
+        <div class="bullets">
+          <div class="bullet">
+            <div class="badge">1</div>
+            <div>
+              <b>Business banking that doesn’t waste your week.</b>
+              <span>Accounts, payments and cashflow visibility — powered by a regulated BaaS partner.</span>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="badge">2</div>
+            <div>
+              <b>Governance by design (not a bolt-on checkbox).</b>
+              <span>Decision trails, role clarity, and compliance awareness from the start.</span>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="badge">3</div>
+            <div>
+              <b>A founder assistant that improves decisions — not vibes.</b>
+              <span>Practical prompts for cashflow, risk and operations. Less “AI magic”, more “useful”.</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="access" class="panel">
+      <div class="wrap">
+        <h2>Early access</h2>
+        <p class="lead">
+          If you’re building a serious business and want to help shape the MVP, email us. Short and human is fine.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:hello@brinkmannbank.nl?subject=Early%20access%20%E2%80%94%20Brinkmann%20Bank&body=Hi%2C%0A%0AI%E2%80%99d%20like%20early%20access.%0A%0AName%3A%0ACompany%3A%0AStage%3A%0AWhat%20do%20you%20want%20fixed%20in%20banking%20today%3F%0A%0AThanks!">Email hello@</a>
+          <a class="btn btn-ghost" href="mailto:legal@brinkmannbank.nl?subject=Legal%20question%20%E2%80%94%20Brinkmann%20Bank">Legal: legal@</a>
+          <a class="btn btn-ghost" href="mailto:info@brinkmannbank.nl?subject=General%20question%20%E2%80%94%20Brinkmann%20Bank">Info: info@</a>
+          <!-- SEO/internal link to real page -->
+          <a class="btn btn-ghost" href="/contact.html">Contact page</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="wrap foot">
@@ -446,7 +501,11 @@
       </div>
       <div>
         Pre-launch MVP • Built on Banking-as-a-Service<br/>
-        <span style="color: rgba(255,255,255,.55);">Not a bank (yet). Not financial advice. Just honest progress.</span>
+        <span style="color: rgba(255,255,255,.55);">Not a bank (yet). Not financial advice. Just honest progress.</span><br/>
+        <!-- SEO/internal links -->
+        <span style="color: rgba(255,255,255,.55);">
+          <a href="/over.html">About</a> · <a href="/diensten.html">Services</a> · <a href="/contact.html">Contact</a>
+        </span>
       </div>
     </div>
   </footer>
